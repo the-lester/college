@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>سامانه استعلام کلاس</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <h1 class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        سامانه استعلام کلاس
+      </h1>
+      <button id="theme-toggle" class="theme-toggle">
+        <i id="theme-icon" class="fas fa-moon"></i>
+    </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2 id="hero-title" class="hero-title">
+      سامانه هوشمند مدیریت کلاس‌ها
+    </h2>
+    <p id="hero-subtitle" class="hero-subtitle">
+      با تجربه‌ای مدرن و سریع، کلاس‌های خود را پیدا و مدیریت کنید
+    </p>
+  </section>
+
+  <!-- Main -->
+  <main class="container">
+    <div class="glass">
+      <!-- Search Container -->
+      <div class="search-container">
+        <div class="search-box">
+          <input id="search-input" type="text" placeholder="جستجو درس، استاد، کد..." class="search-input"/>
+          <i class="fas fa-search"></i>
+          <div id="suggestions" class="suggestions"></div>
+        </div>
+        <div class="input_section">
+          <select id="day-filter" class="filter-select">
+            <option value="">همه روزها</option>
+            <option value="شنبه">شنبه</option>
+            <option value="یکشنبه">یکشنبه</option>
+            <option value="دوشنبه">دوشنبه</option>
+            <option value="سه‌شنبه">سه‌شنبه</option>
+            <option value="چهارشنبه">چهارشنبه</option>
+          </select>
+          <select id="time-filter" class="filter-select">
+            <option value="">همه ساعات</option>
+            <option value="7:30">7:30</option>
+            <option value="10">10:00</option>
+            <option value="13">13:00</option>
+            <option value="15:30">15:30</option>
+            <option value="17:10">17:10</option>
+          </select>
+        </div>
+        <button id="menu-toggle" class="menu-button">
+          <i class="fas fa-bars"></i> لیست کلاس‌ها
+        </button>
+      </div>
+      <div id="breadcrumb" class="breadcrumb"></div>
+    </div>
+  </main>
+<div class="dropdown-menu-space">
+  <!-- Dropdown Menu -->
+  <div id="dropdown-menu" class="dropdown-menu">
+    <div class="navbar_header">
+<button id="navbar_header_side" class="navbar_header_side">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+  </svg>
+  
+  </svg>
+  
+</button>
+
+    </div>
+    <div id="class-list"></div>
+  </div>
+  
+</div>
+
+  <!-- Loading -->
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Reminder Modal -->
+  <div id="reminder-modal" class="modal">
+    <div class="modal-content">
+      <h3 class="modal-title">تنظیم یادآور کلاس</h3>
+      <div class="modal-group">
+        <label>زمان یادآور:</label>
+        <select id="reminder-time" class="filter-select w-full">
+          <option value="15">15 دقیقه قبل</option>
+          <option value="30">30 دقیقه قبل</option>
+          <option value="60">1 ساعت قبل</option>
+        </select>
+      </div>
+      <div class="modal-group">
+        <label>ایمیل (اختیاری):</label>
+        <input id="reminder-email" type="email" class="filter-input w-full" placeholder="ایمیل خود را وارد کنید"/>
+      </div>
+      <div class="modal-actions">
+        <button id="add-to-calendar" class="action-btn">اضافه به تقویم</button>
+        <button id="set-reminder" class="action-btn action-btn--green">تایید</button>
+        <button id="close-modal" class="action-btn action-btn--red">بستن</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>
